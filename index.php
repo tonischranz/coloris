@@ -1,3 +1,6 @@
+<?php
+    const URL = 'https://www.compart.com/en/unicode/U+';
+?>
 <!doctype html>
 
 <html lang="en">
@@ -13,7 +16,7 @@
             display:flex;
             flex-wrap:wrap;
         }
-        body>main>article {
+        body>main>a {
             padding: .5em;
             border-radius: 50%;
             width: 1.25em;
@@ -22,8 +25,8 @@
             text-align: center;
             overflow: hidden;
         }
-        body>main>article:hover {
-            box-shadow: 1pt 1pt .5em gray;
+        body>main>a:hover {
+            box-shadow: 0 0 .5em gray;
             cursor: pointer;
         }
 
@@ -48,9 +51,9 @@
             
             ?>
 
-            <article style="background-color:<?="#$bg"?>;color:<?=$f?>">
+            <a style="background-color:<?="#$bg"?>;color:<?=$f?>" href="<?=URL.$ch?>">
                 <?="&#x$ch;"?>    
-            </article>
+            </a>
 
             <?php
         }

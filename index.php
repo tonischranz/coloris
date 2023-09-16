@@ -1,5 +1,6 @@
 <?php
     const URL = 'https://www.compart.com/en/unicode/U+';
+    const URLC = 'color.php?c=';
 ?>
 <!doctype html>
 
@@ -38,7 +39,9 @@
 
         for ($i=0; $i < 1000; $i++)
         {
-            $c = rand(0,255);
+            // $c = rand(0,0xff);
+            // $c = rand(0,0x42e);
+            $c = rand(0x300,0x5ff);
             $r = rand(0,255);
             $g = rand(0,255);
             $b = rand(0,255);
@@ -47,7 +50,9 @@
             $f = $t > (128 * 3) ? 'black' : 'white';
 
             $bg = sprintf('%02x%02x%02x', $r, $g, $b);
-            $ch = sprintf('26%02x', $c);
+            $ch = sprintf('1f%03x', $c);
+            // $ch = sprintf('13%S03x', $c);
+            // $ch = sprintf('26%02x', $c);
             
             ?>
 

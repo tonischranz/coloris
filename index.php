@@ -33,6 +33,11 @@
         }
 
     </style>
+    <script type="module">
+        import $ from 'jquery'
+
+        document.
+    </script>
 </head>
 <body>
     <main>
@@ -40,22 +45,32 @@
 
         for ($i=0; $i < 1000; $i++)
         {
+            $c = rand(0x300,0x6fc);
             // $c = rand(0,0xff);
-            // $c = rand(0,0x42e);
-            // $c = rand(0x300,0x64f);
-            $c = rand(0,0xbff);
-            $r = rand(0,255);
-            $g = rand(0,255);
-            $b = rand(0,255);
+            
+            // $r = rand(0,255);
+            // $g = rand(0,255);
+            // $b = rand(0,255);
+
+            // $r = rand(-64,255);
+            // $g = rand(-64,168);
+            // $b = rand(-64,192);
+
+            $r = rand(-64,255);
+            $g = rand(-64,255);
+            $b = rand(-64,255);
+
+            $r = $r < 0 ? 0 : $r;
+            $g = $g < 0 ? 0 : $g;
+            $b = $b < 0 ? 0 : $b;
 
             $t = $r+$g+$b;
-            $f = $t > (128 * 3) ? 'black' : 'white';
+            $f = $t > (128 * 2) ? 'black' : 'white';
 
             $bg = sprintf('%02x%02x%02x', $r, $g, $b);
             $ch = sprintf('1f%03x', $c);
-            // $ch = sprintf('13%S03x', $c);
             // $ch = sprintf('26%02x', $c);
-            
+                        
             ?>
 
             <a style="background-color:<?="#$bg"?>;color:<?=$f?>" href="<?=URL.$ch?>">

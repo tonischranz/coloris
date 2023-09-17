@@ -25,6 +25,7 @@
             margin: .25rem;
             text-align: center;
             overflow: hidden;
+            text-decoration: none;
         }
         body>main>a:hover {
             box-shadow: 0 0 .5em gray;
@@ -41,7 +42,8 @@
         {
             // $c = rand(0,0xff);
             // $c = rand(0,0x42e);
-            $c = rand(0x300,0x5ff);
+            // $c = rand(0x300,0x64f);
+            $c = rand(0,0xbff);
             $r = rand(0,255);
             $g = rand(0,255);
             $b = rand(0,255);

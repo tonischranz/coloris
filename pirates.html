@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P!R473$</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap');
+
+        @media (max-width:42rem) {
+
+            h1 {
+                padding: .25em 0 !important;
+                font-size: 3rem !important;
+                transform: none !important;
+                animation: none !important;
+            }
+
+            body {
+                width: 100vw !important;
+                margin-right: 2em;
+            }
+            form.s {
+                width: 100% !important;
+            }
+            fieldset {
+                padding-left: .25rem;
+                padding-right: .25rem;
+            }
+       }
+
+        @media (min-width: 42rem) and (max-width: 80rem) {
+            body {
+                width: calc(100vw - 2rem) !important;
+            }
+            h1 {
+                /* font-size: 4rem !important; */
+            }
+        }
+
+        body {
+            background-color: var(--theme-background-color, #aaa);
+            color: var(--theme-normal-color, #222);
+            font-family: var(--theme-font, 'sans-serif'), "Noto Color Emoji";
+            width: 80rem;
+            margin: auto;
+            font-size: 2rem;
+        }
+        h1 {
+            padding: .25em;
+            /* position: relative; */
+            font-size: 2.5em;
+            transform: translate(.25em, .125em);
+            text-align: right;
+            animation: moveleft 2s;
+            transform: translateX(0);
+            color: #000;
+        }
+
+        @keyframes bone_rotate {
+            0% {
+                transform: translateX(-7rem) rotate(0) ;
+
+            }
+            50% {
+                transform: translateX(-7rem) rotate(0) ;
+
+            }
+            100% {
+                transform: translateX(7rem) rotate(90deg);
+            }
+        }
+        @keyframes moveleft {
+            0% {
+                transform: translateX(7rem);
+            }
+            50% {
+                transform: translateX(7rem);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+        @keyframes moveright {
+            0% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(7rem);
+            }
+        }
+        h1::before, h1::after {
+            content: '\1f9b4';
+            /* content: '\1f52a'; */
+            position: absolute;
+            font-size: 1.5em;
+            z-index: -1;
+            top: 0em;
+            animation: moveright 2s;
+            transform: translateX(7rem);
+        }
+        h1::before {
+            /* content: '\1f356'; */
+            /* content: '\1f944'; */
+            z-index: -2;
+            left: 0em;
+        }
+        h1::after {
+            /* transform: scaleX(-1) translateX(7rem); */
+            left: -.045em;
+            /* transform: translateX(7rem); */
+            transform: translateX(7rem) rotate(90deg);
+            animation: bone_rotate 2s;
+        }
+
+        * {
+            border-radius: .25em;
+        }
+
+        form.s {
+            width: 40rem;
+            margin: auto;
+        }
+        form fieldset {
+            display: flex;
+            flex-direction: column;
+            padding-top: 1.25em;
+        }
+        form fieldset label {
+            /* display: block; */
+            width: calc(100% - 1.5em);
+            /* position: relative; */
+            font-size: .5em;
+            padding-left: 1em;
+        }
+        
+        form input {
+            font-size: 2rem;
+            background: none;
+            border: 1pt solid var(--theme-border-color, #555);
+            width: 100%;
+            position: relative;
+            left: -.250em;
+            right: 0;
+            top: -.725em;
+            padding: .125em;
+            padding-top: 1em;
+            padding-left: .25em;
+        }
+        form input:focus {
+            border: 1pt solid var(--theme-border-color, #555);
+        }
+        form input:-internal-autofill-selected {
+            /* border: 1pt solid var(--theme-border-color, #555); */
+            background: none;
+        }
+
+        form button {
+            font-size: 2rem;
+            background: var(--theme-button-color, #ccc);
+            border: none;
+            padding: .5em 0;
+            color: var(--theme-normal-color, #222);
+            border: 1pt solid var(--theme-border-color, #555);
+            margin-left: .25em;
+        }
+
+        form button:hover,
+        form button:active {
+            background-color: var(--theme-button-active-color, #fff);
+        }
+
+        /* @media (prefers-color-scheme: light) { 
+            body {
+                background-color: #aaa;
+                color: #222;
+            }
+        } */
+
+        @media (prefers-color-scheme: dark) { 
+            body {
+                background-color: var(--theme-background-color, #222);
+                color: var(--theme-normal-color, #aaa);
+            }
+            h1 {
+                color: var(--theme-normal-color, #eee);
+            }
+            form button {
+                background-color: var(--theme-button-color, #111);
+                color: var(--theme-normal-color, #eee);
+            }
+
+            form button:hover,
+            form button:active {
+                background-color: var(--theme-button-active-color, #000);
+            }
+        }
+    </style>
+    <style>
+        :root {
+            --theme-font: 'monospace';
+        }
+    </style>
+</head>
+<body>
+    <form class="s" method="post">
+        <h1>
+            &#x1f480;
+            <!-- P!R473$ -->
+            &nbsp;
+            <!-- &nbsp;&nbsp;&nbsp; -->
+            <!-- pirates -->
+            &#x1f3f4;&zwj;&#x2620;
+            &#x1f1e8;&#x1f1ed;
+            <!-- &#x1f951;<br/> -->
+            <!-- avocado.php -->
+             <!-- c.php -->
+        </h1>
+        <fieldset>
+            <legend>&#x1F511; login&nbsp;</legend>
+            <label>
+                username
+                <input type="text" name="username" />
+            </label>
+            <label>
+                password
+                <input type="password" name="password" />
+            </label>
+            <button type="submit">go</button>
+        </fieldset>
+    </form>
+    <!-- <h2>&#x1f480;&zwj;&#x1F9B4;&zwj;&#x1F9B4;</h2> -->
+
+    <!-- <h2>&#x1F468;&zwj;&#x1F469;&zwj;&#x1F466;</h2> -->
+</body>
+</html>

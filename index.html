@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>avocado.php</title>
+    
+    <style>
+        /* @import url('https://fonts.googleapis.com/css2?family=Noto+Emoji&display=fallback'); */
+        /* @import url('https://fonts.googleapis.com/css2?family=Noto+Sans|Noto+Color+Emoji'); */
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans');
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Color+Emoji');
+        /* @font-face {
+            font-family: 'Noto Color Emoji';
+            src:
+            url('https://github.com/adobe-fonts/noto-emoji-svg/releases/download/2.100/NotoColorEmoji-SVG.otf') format('opentype')
+        } */
+         /* @import url('https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=fallback'); */
+
+        @media (max-width:42rem) {
+                body {
+                    width: 100vw !important;
+                    margin-right: 2em;
+                }
+                nav {
+                    padding: .25em 0 !important;
+                    font-size: 3rem !important;
+                }
+                h1{
+                    top:1.25em !important;
+                    font-size: .75em !important;
+                }
+                h2{
+                    font-size: 1.125em !important;
+                }
+                form.s {
+                    width: 100% !important;
+                }
+                fieldset {
+                    padding-left: .25rem;
+                    padding-right: .25rem;
+                }
+        }
+
+        @media (min-width: 42rem) and (max-width: 80rem) {
+            body {
+                width: calc(100vw - 2rem) !important;
+            }
+            nav {
+                font-size: 4rem !important;
+            }
+        }
+
+        @media (min-width: 100rem) {
+            body {
+                width: 100rem !important;
+            } 
+        }
+
+        @media (min-height: 20rem) {
+
+            h1 {
+            position: sticky;
+            top:5.25rem;
+            text-wrap: nowrap;
+        }
+        }
+
+        input,
+        button,
+        fieldset {
+            border-radius: var(--theme-border-radius, .5em);
+        }
+
+        body {
+            background-color: var(--theme-background-color, #aaa);
+            color: var(--theme-normal-color, #222);
+            /* font-family: var(--theme-font, 'monospace'); */
+            /* font-family: "Noto Color Emoji", var(--theme-font, 'sans-serif'); */
+            font-family: var(--theme-font, 'sans-serif'), 'Noto Sans', 'Noto Color Emoji';
+            /* , "Noto Color Emoji"; */
+            /* font-family: "Noto Color Emoji", sans-serif; */
+            /* font-family: sans-serif; */
+            /* font-family: "Noto Color Emoji", sans-serif; */
+            width: 80rem;
+            margin: auto;
+            font-size: 2rem;
+            /* font-weight: 400; */
+            /* font-style: normal; */
+        }
+
+        body>nav {
+            /* padding: .25em; */
+            font-size: 2.5em;
+            text-align: right;
+            color: var(--theme-highlight-color, #000);
+            position: sticky;
+            top: -.75rem;
+            
+            background-color: var(--theme-background-color, #aaa);
+            z-index: 10;
+            padding-top: 0;
+            padding-bottom: .75rem /*!important*/;
+            padding-right: .125rem !important;
+        }
+
+        body>main {
+            margin-top: max(0em, calc((100vh - 100%) / -4));
+            margin-bottom: max(0em, calc((100vh - 100%) / -4));
+        }
+
+        img {
+            width: 100%;
+        }
+
+        i {
+            font-style: normal;
+        }
+
+        body>nav i {
+            display: block;
+            position: fixed;
+            top: .125rem;
+            cursor: pointer;
+            z-index: 100;
+            background-color: var(--theme-background-color, #aaa);
+        }
+
+        nav i.avocado::before {
+            /* content: '\2699'; */
+            content: '\1f951';
+            /* content: '\1f951\1f955\1f957'; */
+        }
+
+        a:link,
+        a:visited {
+            color: var(--theme-link-color, #006);
+            text-decoration: none;
+        }
+
+
+        h1 {
+            background-color: var(--theme-background-color, #aaa);
+            color: var(--theme-highlight-color, #000);
+            border-radius: 0;
+            font-size: 1.3em;
+        }
+
+        h2 {
+            color: var(--theme-second-color, #444);
+        }
+
+        form.s {
+            width: 40rem;
+            margin: auto;
+        }
+
+        form fieldset {
+            display: flex;
+            flex-direction: column;
+            padding-top: 1.25em;
+        }
+
+        form fieldset legend {
+            padding-left: 1.12em;
+            padding-right: 1.5em;
+        }
+
+        form fieldset label {
+            width: calc(100% - 1.5em);
+            font-size: .875em;
+            padding-left: 1em;
+            color: var(--theme-highlight-color, #000)
+        }
+
+        form fieldset div {
+            text-align: right;
+        }
+
+        form input {
+            font-size: 2rem;
+            background: none;
+            border: 1pt solid var(--theme-border-color, #555);
+            width: calc(100% - .75em);
+            position: relative;
+            left: -.250em;
+            right: 0;
+            top: -.9875em;
+            padding: .125em;
+            padding-top: 1em;
+            padding-left: .25em;
+            padding-right: .75em;
+            /* text-align: right; */
+        }
+        form input:focus {
+            border: 1pt solid var(--theme-border-color, #555);
+        }
+        form input:-internal-autofill-selected {
+            background: none;
+        }
+
+        form button {
+            font-size: 2rem;
+            background: var(--theme-button-color, #ccc);
+            border: none;
+            padding: .5em 1.5em;
+            color: var(--theme-normal-color, #222);
+            border: 1pt solid var(--theme-border-color, #555);
+            margin-left: .25em;
+        }
+
+        form button:hover,
+        form button:active {
+            background-color: var(--theme-button-active-color, #fff);
+            color: var(--theme-highlight-color, #000);
+        }
+
+        @media (prefers-color-scheme: dark) { 
+            body {
+                background-color: var(--theme-background-color, #222);
+                color: var(--theme-normal-color, #aaa);
+            }
+
+            body>nav {
+                color: var(--theme-highlight-color, #090);
+                background-color: var(--theme-background-color, #222);
+            }
+
+            body>nav i {
+                background-color: var(--theme-background-color, #222);
+            }
+
+            h1 {
+                background-color: var(--theme-background-color, #222);
+                color: var(--theme-highlight-color, #090);
+            }
+
+            h2 {
+                color: var(--theme-second-color, #fff);
+            }
+
+            form button {
+                background-color: var(--theme-button-color, #111);
+                color: var(--theme-normal-color, #eee);
+            }
+
+            form button:hover,
+            form button:active {
+                background-color: var(--theme-button-active-color, #000);
+                color: var(--theme-highlight-color, #090);
+            }
+
+            form fieldset label {
+                color: var(--theme-highlight-color, #090);
+            }
+        }
+    </style>
+    <style>
+        :root {
+            /* --theme-font: 'monospace'; */
+            /* --theme-highlight-color: #050; */
+            /* --theme-second-color: #050; */
+            /* --theme-border-radius: .25em; */
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <!-- &#x1f480; -->
+        <!-- P!R473$ -->
+        <i class="avocado"></i>
+         
+        <!-- <i>&#x11054</i> -->
+        <!-- &#x1f951;<br/> -->
+        <!-- avocado.php -->
+        <a href="avocado.php">avocado.php</a>
+        <!-- c.php -->
+    </nav>
+    <main>
+    <form class="s" method="post">
+        
+        <fieldset>
+            <legend>&#x1F511; create login</legend>
+            <label>
+                username
+                <input type="text" name="username" placeholder="root" required />
+            </label>
+            <label>
+                password
+                <input type="password" name="password" placeholder="&#x643;&#x644;&#x645;&#x629;&#x627;&#x644;&#x645;&#x631;" required />
+            </label>
+            <div>
+                <button type="submit">go</button>
+            </div>
+        </fieldset>
+    </form>
+</main>
+    <!-- <h2>&#x1f480;&zwj;&#x1F9B4;&zwj;&#x1F9B4;</h2> -->
+    <h1>
+        <!-- <i>&#x1f451;</i> -->
+        Die beste Züpfe der Welt
+    </h1>
+	<h2>Zutaten</h2>
+        <table id="ingredients">
+            <tr><td>1</td><td>kg</td><td>Mehl</td></tr>
+            <tr><td>1</td><td>EL</td><td>Salz</td></tr>
+            <tr><td>1</td><td>Würfel</td><td>Hefe</td></tr>
+            <tr><td>1</td><td>dl</td><td>Wasser</td></tr>
+            <tr><td>4</td><td>dl</td><td>Milch</td></tr>
+            <tr><td>1</td><td>dl</td><td>Weisswein</td></tr>
+            <tr><td>125</td><td>g</td><td>Margarine</td></tr>
+            <tr><td>1</td><td></td><td>Eigelb</td></tr>
+        </table>
+	<h2>Küchenutensilien</h2>
+	<ul>
+		<li>Schüssel</li>
+		<li>Teig-Knetmaschine</li>
+		<li>Massbecher</li>
+		<li>Teighorn</li>
+		<li>Pinsel</li>
+                <li><b>sauberes</b> Geschirrtuch</li>
+	</ul>
+        <h2>Zubereitung</h2>
+        <p>Hefe in Wasser auflösen. Margarine auslassen, beispielsweise in einer Mikrowelle</p>
+        <p>Mehl, Salz in Schüssel geben. Aufgelöste Hefe, Milch, Weisswein und Margarine beigeben. <br />
+            Kneten bis sich eine homogene Masse gebildet hat. Anschliessend mit Geschirrtuch abgedeckt an der Wärme um das Doppelte aufgehen lassen.</p>
+        <p>Teig mit Teighorn aus der Schüssel heben und auf einer <b>sauberen</b> Arbeitsfläche in vier
+            gleich grosse Teile aufteilen. 2 Züpfen nach <a href="http://youtu.be/9OG64AN6R-c">Anleitung</a> flechten. Anschliessend mit Eigelb bepinseln.</p>
+        <p>Ofen auf 250°C vorheizen und Züpfen 15 min auf 220°C backen, Hitze auf 190°C reduzieren und weitere 15 min fertig Backen.<br />Auskühlen lassen und wahlweise mit Butter, Hobelkäse, Honig oder Marmelade geniessen.</p>
+        <div>
+            <img src="http://upload.wikimedia.org/wikipedia/commons/2/2b/Butterzopf.jpg" alt="Beispiel-Züpfe" />
+            <p><i><b>Beispiel-Züpfe</b> Bildquelle: Wikipedia</i></p>
+        </div>
+    <!-- <h2>&#x1F468;&zwj;&#x1F469;&zwj;&#x1F466;</h2> -->
+     <pre>
+
+
+
+
+
+
+
+
+
+
+
+     </pre>
+</body>
+</html>

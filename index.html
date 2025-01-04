@@ -61,7 +61,7 @@
 
             h1 {
             position: sticky;
-            top:5.25rem;
+            top:6.25rem;
             text-wrap: nowrap;
         }
         }
@@ -254,6 +254,21 @@
                 color: var(--theme-highlight-color, #090);
             }
         }
+
+        @media print {
+            @page {
+                /* padding-top: 2rem; */
+            }
+            h1 {
+                position: static;
+            }
+            body>nav,
+            body>nav i {
+                /* top: -4rem; */
+                position: static;
+            }
+        }
+
     </style>
     <style>
         :root {

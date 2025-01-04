@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>P!R473$</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono');
         @import url('https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap');
 
         @media (max-width:42rem) {
@@ -14,6 +15,12 @@
                 font-size: 3rem !important;
                 transform: none !important;
                 animation: none !important;
+                text-align: left !important;
+            }
+
+            h1::first-letter {
+                /* transform: translateY(-2em) !important; */
+                /* font-size: 2em; */
             }
 
             body {
@@ -201,11 +208,48 @@
     </style>
     <style>
         :root {
-            --theme-font: 'monospace';
+            --theme-font: 'Noto Sans Mono';
         }
     </style>
 </head>
 <body>
+    <details>
+        <style>
+            header.ruler > div {position: fixed; left:0; text-align: right; z-index: 10; top:0; opacity: .27;}
+            aside.ruler > div {position: fixed; bottom: 0; writing-mode: vertical-lr; right: .27rem; z-index: 10; opacity: .27;}
+            summary.ruler::before{content: '\1f4cf';}
+            details > summary {list-style-type: none;}
+            details > summary::-webkit-details-marker { display: none; }
+            details[open] summary {visibility: hidden;}
+        </style>
+        <script>
+
+        </script>
+        <summary class="ruler"></summary>
+        <aside class="ruler">
+            <div id="vr120" style="height: 120rem; background-color: #205;">120rem</div>
+            <div style="height: 100rem; background-color: #005;">100rem</div>
+            <div style="height: 80rem; background-color: #025;">80rem</div>
+            <div style="height: 60rem; background-color: #055;">60rem</div>
+            <div style="height: 40rem; background-color: #052;">40rem</div>
+            <div style="height: 20rem; background-color: #050;">20rem</div>
+        </aside>
+
+        <header class="ruler">
+            <div style="width: 240rem; background-color: #950;">240rem</div>
+            <div style="width: 220rem; background-color: #920;">220rem</div>
+            <div style="width: 200rem; background-color: #900;">200rem</div>
+            <div style="width: 180rem; background-color: #505;">180rem</div>
+            <div style="width: 160rem; background-color: #525;">160rem</div>
+            <div style="width: 140rem; background-color: #225;">140rem</div>
+            <div style="width: 120rem; background-color: #025;">120rem</div>
+            <div style="width: 100rem; background-color: #055;">100rem</div>
+            <div style="width: 80rem; background-color: #052;">80rem</div>
+            <div style="width: 60rem; background-color: #050;">60rem</div>
+            <div style="width: 40rem; background-color: #250;">40rem</div>
+            <div style="width: 20rem; background-color: #550;">20rem</div>
+        </header>
+    </details>
     <form class="s" method="post">
         <h1>
             &#x1f480;

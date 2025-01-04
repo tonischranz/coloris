@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono');
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Color+Emoji');
+
+        body {
+            background-color: #040;
+            color: #7f7;
+            font-family: var(--theme-font, 'sans-serif'), "Noto Color Emoji";
+        }
+
+        body>main {
+            font-size: 8em;
+        }
+
+        body>main::before {
+            content: '\1f69c';
+            animation: ride 10s;
+            display: inline-block;
+            transform: scaleX(-1) translateX(calc(-100vw + 1.5em));
+        }
+
+        @keyframes ride {
+            0% {
+                transform: scaleX(-1) rotateZ(0deg);
+            }
+            20% {
+                
+                transform: scaleX(-1) rotateZ(0deg);
+            }
+            30% {
+                transform: scaleX(-1) translateX(.375em) translateY(-.25rem) /*translateX(2.5rem) translateY(-1.5rem)*/ rotateZ(45deg);
+            }
+            50% {
+                content: '\1f69c';
+                transform: scaleX(-1) rotateZ(0deg);
+            }
+            100% {
+                content: '\2620';
+                transform: scaleX(-1) rotateZ(0deg) translateX(calc(-100vw + 1.5em));
+            }
+        }
+
+        @media (max-width:42rem) {
+            body>main {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>traktor fahrn</main>
+</body>
+</html>

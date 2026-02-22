@@ -1,0 +1,40 @@
+<details>
+        <style>
+            body>details header.ruler > div {position: fixed; left:0; text-align: right; z-index: 2; bottom:0; opacity: .27;color:#fff;font-size: 2rem;}
+            body>details aside.ruler > div {position: fixed; bottom: 0; writing-mode: vertical-lr; right: .27rem; z-index: 1; opacity: .27;color:#fff;font-size: 2rem;}
+            body>details summary.ruler::before{content: '\1f4d0';  }
+            body>details summary.ruler {position:fixed; bottom: 0; right: 0.25em;z-index: 10; }
+            body>details > summary {list-style-type: none; }
+            body>details > summary::-webkit-details-marker { display: none; }
+        </style>
+        
+        <script>
+
+        </script>
+        <summary class="ruler"></summary>
+        
+        <aside class="ruler">
+            <div id="vr120" style="height: 120rem; background-color: #205;">120</div>
+            <div style="height: 100rem; background-color: #005;">100</div>
+            <div style="height: 80rem; background-color: #025;">80</div>
+            <div style="height: 60rem; background-color: #055;">60</div>
+            <div style="height: 40rem; background-color: #052;">40</div>
+            <div style="height: 20rem; background-color: #050;">20</div>
+        </aside>
+
+        <header class="ruler">
+            <div style="width: 240rem; background-color: #950;">240</div>
+            <div style="width: 220rem; background-color: #920;">220</div>
+            <div style="width: 200rem; background-color: #900;">200</div>
+            <div style="width: 180rem; background-color: #505;">180</div>
+            <div style="width: 160rem; background-color: #525;">160</div>
+            <div style="width: 140rem; background-color: #225;">140</div>
+            <div style="width: 120rem; background-color: #025;">120</div>
+            <div style="width: 100rem; background-color: #055;">100</div>
+            <div style="width: 80rem; background-color: #052;">80</div>
+            <div style="width: 60rem; background-color: #050;">60</div>
+            <div style="width: 40rem; background-color: #250;">40</div>
+            <div style="width: 20rem; background-color: #550;">20</div>
+        </header>
+        
+    </details>
